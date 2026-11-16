@@ -44,11 +44,11 @@ Nodemon is pinned to **3.1.11** after the initial installation reported a [minim
 
 ## N1 Screenshots
 
-Pending: capture actual screenshots of:
+The screenshots show Node.js **v24.19.0**, npm **11.17.0**, the completed package metadata and dependency sections, and a successful run using `npm.cmd start`. The author's name is visible in the source code, package author field, or program output.
 
-1. `node -v` and `npm -v` (or `npm.cmd -v` in PowerShell).
-2. The finished `package.json`, including `dependencies` and `devDependencies`.
-3. The output of `npm start` (or `npm.cmd start` in PowerShell).
+![N1 successful npm start output showing the student's name, section, and current date and time](set1/n1-setup/screenshots/N1_outputs.png)
 
-Keep the author's name visible in each screenshot, for example by showing the source-file header beside the terminal output.
-Save the images in `set1/n1-setup/screenshots/`; they will be linked and displayed here once supplied.
+Additional screenshots:
+
+- [Node.js and npm versions](set1/n1-setup/screenshots/N1_versions.png)
+- [Completed package.json with regular and development dependencies](set1/n1-setup/screenshots/N1_package_jason.png)
