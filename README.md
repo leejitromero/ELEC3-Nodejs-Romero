@@ -95,7 +95,16 @@ API references: [Node.js CommonJS modules](https://nodejs.org/api/modules.html),
 
 ### N2 Screenshots
 
-Pending: capture actual runs showing all five operations and the two required errors using the commands above.
-Keep the student's name and section visible in the terminal output.
-Suggested filenames: `N2_add.png`, `N2_subtract.png`, `N2_multiply.png`, `N2_divide.png`, `N2_average.png`, `N2_divide_zero.png`, and `N2_unknown_operation.png`.
-Save the screenshots in `set1/n2-calculator/screenshots/`; an actual screenshot will be embedded here when supplied.
+The seven screenshots show all five operations and both required error cases using the commands above. The student's full name and section are visible in every run.
+
+![N2 addition output showing 12 + 8 = 20, the student's name, and section](set1/n2-calculator/screenshots/N2_ADD.png)
+
+| Case | Screenshot |
+| --- | --- |
+| Add | [12 + 8 = 20](set1/n2-calculator/screenshots/N2_ADD.png) |
+| Subtract | [12 - 8 = 4](set1/n2-calculator/screenshots/N2_SUBTRACT.png) |
+| Multiply | [12 * 8 = 96](set1/n2-calculator/screenshots/N2_MULTIPLY.png) |
+| Divide | [12 / 8 = 1.5](set1/n2-calculator/screenshots/N2_DIVIDE.png) |
+| Average | [Average of 12, 8, 10 = 10](set1/n2-calculator/screenshots/N2_AVERAGE.png) |
+| Division by zero | [Clear error for divide 10 0](set1/n2-calculator/screenshots/N2_DIVISION_BY_ZERO.png) |
+| Unknown operation | [Clear error for power 12 8](set1/n2-calculator/screenshots/N2_UNKNOWN_OPERATION.png) |
