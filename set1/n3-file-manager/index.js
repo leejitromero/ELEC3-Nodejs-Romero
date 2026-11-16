@@ -3,9 +3,6 @@
 // Activity: N3 - File Manager with fs and path
 // Date: November 17, 2026
 
-// References for file operations and path utilities:
-// https://nodejs.org/api/fs.html
-// https://nodejs.org/api/path.html
 const fs = require("fs");
 const path = require("path");
 
@@ -121,3 +118,7 @@ try {
     }
     process.exitCode = 1;
 }
+
+// References for file operations and path utilities:
+// https://nodejs.org/api/fs.html
+// https://nodejs.org/api/path.html

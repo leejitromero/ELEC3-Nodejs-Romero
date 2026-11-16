@@ -3,9 +3,6 @@
 // Activity: N2 - Modular Calculator
 // Date: November 17, 2026
 
-// References for CommonJS modules and command-line arguments:
-// https://nodejs.org/api/modules.html
-// https://nodejs.org/api/process.html#processargv
 const operations = require("./operations");
 const formatter = require("./formatter");
 const path = require("path");
@@ -80,3 +77,7 @@ try {
     console.error(`Error: ${error.message}`);
     process.exitCode = 1;
 }
+
+// References for CommonJS modules and command-line arguments:
+// https://nodejs.org/api/modules.html
+// https://nodejs.org/api/process.html#processargv
