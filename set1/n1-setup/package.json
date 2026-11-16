@@ -10,5 +10,8 @@
   "type": "commonjs",
   "dependencies": {
     "dayjs": "^1.11.23"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.11"
   }
 }
