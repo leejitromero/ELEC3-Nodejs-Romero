@@ -164,7 +164,14 @@ References: [Node.js File System](https://nodejs.org/api/fs.html) and [Node.js P
 
 ### N3 Screenshots
 
-Pending: actual screenshots showing **create, read, update, delete, and list**, with the student's name visible.
-Suggested filenames: `N3_create.png`, `N3_read.png`, `N3_update.png`, `N3_delete.png`, and `N3_list.png`.
-For `list`, make sure the full paths, file names, extensions, and contents of all three retained files can be read; use more than one screenshot if needed.
-Save screenshots in `set1/n3-file-manager/screenshots/`; an actual screenshot will be embedded here when supplied.
+The five screenshots show creating and reading `notes.txt`, appending a second line, deleting it, and listing the three remaining text files. The student's name and section are visible in each screenshot.
+
+![N3 list output showing the full paths, names, extensions, and contents of the three retained text files](set1/n3-file-manager/screenshots/N3_LISTS.png)
+
+| Operation | Screenshot |
+| --- | --- |
+| Create | [Created notes.txt](set1/n3-file-manager/screenshots/N3_CREATE.png) |
+| Read | [Saved contents of notes.txt](set1/n3-file-manager/screenshots/N3_READ.png) |
+| Update | [Original text and appended second line](set1/n3-file-manager/screenshots/N3_UPDATES.png) |
+| Delete | [Deleted notes.txt](set1/n3-file-manager/screenshots/N3_DELETE.png) |
+| List | [Three remaining files with full details](set1/n3-file-manager/screenshots/N3_LISTS.png) |
