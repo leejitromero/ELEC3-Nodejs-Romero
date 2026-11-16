@@ -1,0 +1,17 @@
+{
+  "name": "n1-setup",
+  "version": "1.0.0",
+  "description": "N1 project setup and package management for ELEC 3 - Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jit Lee S. Romero",
+  "type": "commonjs",
+  "dependencies": {
+    "dayjs": "^1.11.23"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.11"
+  }
+}
