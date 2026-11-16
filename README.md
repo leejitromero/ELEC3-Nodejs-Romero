@@ -11,6 +11,7 @@ Self-paced Node.js activities, organized by set and activity.
 | Activity | Description | Folder |
 | --- | --- | --- |
 | N1 - Project Setup and Package Management | An npm project with complete package metadata, a regular dependency, a development dependency, and a start script that prints the student's name. | [set1/n1-setup](set1/n1-setup/) |
+| N2 - Modular Calculator | A command-line calculator that uses two CommonJS custom modules, five operations, the built-in path module, and clear error messages. | [set1/n2-calculator](set1/n2-calculator/) |
 
 ## How to Run N1
 
@@ -52,3 +53,49 @@ Additional screenshots:
 
 - [Node.js and npm versions](set1/n1-setup/screenshots/N1_versions.png)
 - [Completed package.json with regular and development dependencies](set1/n1-setup/screenshots/N1_package_jason.png)
+
+## How to Run N2
+
+N2 uses only Node.js and its built-in modules; no npm packages need to be installed for this activity.
+From the repository root, enter the activity folder:
+
+```sh
+cd set1/n2-calculator
+```
+
+In PowerShell, you can enter the folder directly from any location:
+
+```powershell
+cd C:\Users\leeji\ELEC3-Nodejs-Romero\set1\n2-calculator
+```
+
+Run one command for each calculation. The operation and numbers are part of the command; the program prints the result and ends.
+
+| Operation | Command | Expected result |
+| --- | --- | --- |
+| Add | `node index.js add 12 8` | `12 + 8 = 20` |
+| Subtract | `node index.js subtract 12 8` | `12 - 8 = 4` |
+| Multiply | `node index.js multiply 12 8` | `12 * 8 = 96` |
+| Divide | `node index.js divide 12 8` | `12 / 8 = 1.5` |
+| Average | `node index.js average 12 8 10` | `Average of 12, 8, 10 = 10` |
+| Division by zero | `node index.js divide 10 0` | `Error: Cannot divide by zero.` |
+| Unknown operation | `node index.js power 12 8` | An error naming the unknown operation and listing the supported operations. |
+
+Add, subtract, multiply, and divide each require exactly two numbers. Average accepts one or more numbers.
+Missing or invalid numbers produce readable errors. Each run displays the student's full name and section.
+
+### N2 Modules
+
+- [operations.js](set1/n2-calculator/operations.js) exports the five calculation functions using `module.exports`.
+- [formatter.js](set1/n2-calculator/formatter.js) exports `formatResult`, which returns a readable calculation string.
+- [index.js](set1/n2-calculator/index.js) imports both custom modules with `require()`, reads inputs using `process.argv`, validates them, calls the selected operation, and displays the formatted result.
+- The built-in `path` module supplies `path.basename(__filename)` for the usage message shown when running `node index.js` without an operation.
+
+API references: [Node.js CommonJS modules](https://nodejs.org/api/modules.html), [process.argv](https://nodejs.org/api/process.html#processargv), and [path.basename](https://nodejs.org/api/path.html#pathbasenamepath-suffix).
+
+### N2 Screenshots
+
+Pending: capture actual runs showing all five operations and the two required errors using the commands above.
+Keep the student's name and section visible in the terminal output.
+Suggested filenames: `N2_add.png`, `N2_subtract.png`, `N2_multiply.png`, `N2_divide.png`, `N2_average.png`, `N2_divide_zero.png`, and `N2_unknown_operation.png`.
+Save the screenshots in `set1/n2-calculator/screenshots/`; an actual screenshot will be embedded here when supplied.
