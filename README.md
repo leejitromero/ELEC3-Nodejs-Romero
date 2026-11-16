@@ -12,6 +12,7 @@ Self-paced Node.js activities, organized by set and activity.
 | --- | --- | --- |
 | N1 - Project Setup and Package Management | An npm project with complete package metadata, a regular dependency, a development dependency, and a start script that prints the student's name. | [set1/n1-setup](set1/n1-setup/) |
 | N2 - Modular Calculator | A command-line calculator that uses two CommonJS custom modules, five operations, the built-in path module, and clear error messages. | [set1/n2-calculator](set1/n2-calculator/) |
+| N3 - File Manager with fs and path | A command-line text file manager that creates, reads, appends, deletes, and lists files stored in its files subfolder. | [set1/n3-file-manager](set1/n3-file-manager/) |
 
 ## How to Run N1
 
@@ -108,3 +109,62 @@ The seven screenshots show all five operations and both required error cases usi
 | Average | [Average of 12, 8, 10 = 10](set1/n2-calculator/screenshots/N2_AVERAGE.png) |
 | Division by zero | [Clear error for divide 10 0](set1/n2-calculator/screenshots/N2_DIVISION_BY_ZERO.png) |
 | Unknown operation | [Clear error for power 12 8](set1/n2-calculator/screenshots/N2_UNKNOWN_OPERATION.png) |
+
+## How to Run N3
+
+N3 uses the built-in `fs` and `path` modules. No npm packages need to be installed for this activity.
+From the repository root, enter the activity folder:
+
+```sh
+cd set1/n3-file-manager
+```
+
+In PowerShell, enter the folder directly from any location:
+
+```powershell
+cd C:\Users\leeji\ELEC3-Nodejs-Romero\set1\n3-file-manager
+```
+
+Run these commands **in order**, taking a screenshot after each one. Text in quotes is the content to save in the file.
+
+| Command | Expected behavior |
+| --- | --- |
+| `node index.js create notes.txt "Hello from Jit Lee S. Romero."` | Create `files/notes.txt` and display `Created: notes.txt`. |
+| `node index.js read notes.txt` | Display the saved text. |
+| `node index.js update notes.txt "I am learning fs and path."` | Append a second line and display both lines. |
+| `node index.js delete notes.txt` | Remove the demonstration file and display `Deleted: notes.txt`. |
+| `node index.js list` | Display the full path, file name, extension, and contents of each remaining file. |
+
+Each command displays the student's full name and section. The program performs one command and ends.
+File names are supplied without a folder path; every managed file path is built using `path.join()`.
+The files folder is based on `__dirname`, so running the script from a different terminal folder still uses the same files.
+
+### N3 Source and Saved Files
+
+[index.js](set1/n3-file-manager/index.js) contains separate functions for create, read, update, delete, and list.
+It uses synchronous file operations so each step completes before the next step runs.
+`list` uses `path.basename()` and `path.extname()` to display file details.
+
+The required three text files were created by running this program's `create` command and are included in the repository:
+
+- [student.txt](set1/n3-file-manager/files/student.txt) - the student's full name and section.
+- [lessons.txt](set1/n3-file-manager/files/lessons.txt) - the modules used in N3.
+- [tasks.txt](set1/n3-file-manager/files/tasks.txt) - the supported file operations.
+
+These three files remain after deleting the demonstration file, `notes.txt`. Include the `files` folder when submitting N3.
+
+### N3 Error Handling
+
+Reading or deleting a missing file prints a clear `Error: File not found` message instead of an uncaught stack trace.
+To try these cases after deleting `notes.txt`, run `node index.js read notes.txt` or `node index.js delete notes.txt`.
+Updating a missing file also shows an error. Creating an existing file does not overwrite it; use `update` to append text instead.
+Missing commands, file names, or content show a usage message.
+
+References: [Node.js File System](https://nodejs.org/api/fs.html) and [Node.js Path](https://nodejs.org/api/path.html).
+
+### N3 Screenshots
+
+Pending: actual screenshots showing **create, read, update, delete, and list**, with the student's name visible.
+Suggested filenames: `N3_create.png`, `N3_read.png`, `N3_update.png`, `N3_delete.png`, and `N3_list.png`.
+For `list`, make sure the full paths, file names, extensions, and contents of all three retained files can be read; use more than one screenshot if needed.
+Save screenshots in `set1/n3-file-manager/screenshots/`; an actual screenshot will be embedded here when supplied.
