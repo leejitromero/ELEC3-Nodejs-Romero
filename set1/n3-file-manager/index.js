@@ -6,11 +6,11 @@
 const fs = require("fs");
 const path = require("path");
 
-// __dirname keeps the files folder beside this script, regardless of the terminal folder.
+// Laging katabi ng source file ang files folder, kahit saan ang terminal.
 const filesFolder = path.join(__dirname, "files");
 
 function createFile(filePath, content) {
-    // The wx flag creates a new file without overwriting an existing one.
+    // Ang wx ay para gumawa ng bagong file nang hindi pinapatungan ang existing file.
     fs.writeFileSync(filePath, content + "\n", { encoding: "utf8", flag: "wx" });
     console.log(`Created: ${path.basename(filePath)}`);
 }
@@ -27,7 +27,7 @@ function updateFile(filePath, content) {
         throw new Error(`File not found: ${path.basename(filePath)}`);
     }
 
-    // Append adds text at the end and keeps the existing contents.
+    // Idagdag sa dulo ang text; panatilihin ang dating laman.
     fs.appendFileSync(filePath, content + "\n", "utf8");
     console.log(`Updated: ${path.basename(filePath)}`);
     readFile(filePath);
@@ -79,8 +79,10 @@ function main() {
         return;
     }
 
-    // Accept only a file name so all managed files stay inside the files folder.
-    if (!fileName || fileName !== path.basename(fileName) || fileName.includes("/") || fileName.includes("\\") || fileName === "." || fileName === "..") {
+    // Filename lang ang tanggap para sa files folder lang magbasa o magsulat.
+    if (!fileName || fileName !== path.basename(fileName) ||
+        fileName.includes("/") || fileName.includes("\\") ||
+        fileName === "." || fileName === "..") {
         throw new Error("Enter a file name such as notes.txt, without a folder path.");
     }
 
@@ -90,19 +92,15 @@ function main() {
 
     const filePath = path.join(filesFolder, fileName);
 
-    switch (command) {
-        case "create":
-            createFile(filePath, content);
-            break;
-        case "read":
-            readFile(filePath);
-            break;
-        case "update":
-            updateFile(filePath, content);
-            break;
-        case "delete":
-            deleteFile(filePath);
-            break;
+    // Itugma ang command sa function na gagamitin.
+    if (command === "create") {
+        createFile(filePath, content);
+    } else if (command === "read") {
+        readFile(filePath);
+    } else if (command === "update") {
+        updateFile(filePath, content);
+    } else if (command === "delete") {
+        deleteFile(filePath);
     }
 }
 
