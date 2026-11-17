@@ -4,4 +4,5 @@ Course: ELEC 3 - Node.js
 Set: SET 1
 
 GitHub Repository: https://github.com/leejitromero/ELEC3-Nodejs-Romero
-Merged Pull Request: https://github.com/leejitromero/ELEC3-Nodejs-Romero/pull/1
+Merged Pull Request (current version): https://github.com/leejitromero/ELEC3-Nodejs-Romero/pull/2
+Original Set 1 Pull Request: https://github.com/leejitromero/ELEC3-Nodejs-Romero/pull/1
