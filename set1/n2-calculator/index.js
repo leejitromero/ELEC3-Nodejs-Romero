@@ -11,13 +11,13 @@ function main() {
     console.log("N2 - Modular Calculator");
     console.log("Jit Lee S. Romero | IV-BSIT C");
 
-    // argv[0] is Node, argv[1] is this file, and argv[2] is the operation.
+    // Ang operation ay nasa argv[2]; ang kasunod na inputs ay ang numbers.
     const operation = (process.argv[2] || "").toLowerCase();
     const numberInputs = process.argv.slice(3);
     const supportedOperations = ["add", "subtract", "multiply", "divide", "average"];
 
     if (!operation) {
-        // The built-in path module gets the file name for the usage message.
+        // Kinukuha ng built-in path module ang filename para sa sample command.
         const scriptName = path.basename(__filename);
         throw new Error(`Usage: node ${scriptName} <operation> <numbers>. Example: node ${scriptName} add 12 8`);
     }
@@ -26,15 +26,14 @@ function main() {
         throw new Error(`Unknown operation: ${operation}. Use add, subtract, multiply, divide, or average.`);
     }
 
-    if (operation === "average") {
-        if (numberInputs.length === 0) {
-            throw new Error("Average needs at least one number.");
-        }
-    } else if (numberInputs.length !== 2) {
+    if (operation === "average" && numberInputs.length === 0) {
+        throw new Error("Average needs at least one number.");
+    }
+    if (operation !== "average" && numberInputs.length !== 2) {
         throw new Error(`${operation} needs exactly two numbers.`);
     }
 
-    // Command-line inputs are strings, so convert and check each number.
+    // String ang input sa terminal. I-convert muna bago mag-compute.
     const numbers = [];
     for (const input of numberInputs) {
         const number = Number(input);
@@ -44,23 +43,18 @@ function main() {
         numbers.push(number);
     }
 
+    // Piliin ang function ayon sa operation na inilagay ng user.
     let result;
-    switch (operation) {
-        case "add":
-            result = operations.add(numbers[0], numbers[1]);
-            break;
-        case "subtract":
-            result = operations.subtract(numbers[0], numbers[1]);
-            break;
-        case "multiply":
-            result = operations.multiply(numbers[0], numbers[1]);
-            break;
-        case "divide":
-            result = operations.divide(numbers[0], numbers[1]);
-            break;
-        case "average":
-            result = operations.average(numbers);
-            break;
+    if (operation === "add") {
+        result = operations.add(numbers[0], numbers[1]);
+    } else if (operation === "subtract") {
+        result = operations.subtract(numbers[0], numbers[1]);
+    } else if (operation === "multiply") {
+        result = operations.multiply(numbers[0], numbers[1]);
+    } else if (operation === "divide") {
+        result = operations.divide(numbers[0], numbers[1]);
+    } else if (operation === "average") {
+        result = operations.average(numbers);
     }
 
     if (!Number.isFinite(result)) {
@@ -73,7 +67,7 @@ function main() {
 try {
     main();
 } catch (error) {
-    // Show a readable error instead of an answer or an uncaught stack trace.
+    // Ipakita ang malinaw na error message kapag may invalid input.
     console.error(`Error: ${error.message}`);
     process.exitCode = 1;
 }

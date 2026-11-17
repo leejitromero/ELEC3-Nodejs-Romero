@@ -90,6 +90,7 @@ Missing or invalid numbers produce readable errors. Each run displays the studen
 - [operations.js](set1/n2-calculator/operations.js) exports the five calculation functions using `module.exports`.
 - [formatter.js](set1/n2-calculator/formatter.js) exports `formatResult`, which returns a readable calculation string.
 - [index.js](set1/n2-calculator/index.js) imports both custom modules with `require()`, reads inputs using `process.argv`, validates them, calls the selected operation, and displays the formatted result.
+- The operation selection uses `if/else` so each input can be followed directly to its calculation function.
 - The built-in `path` module supplies `path.basename(__filename)` for the usage message shown when running `node index.js` without an operation.
 
 API references: [Node.js CommonJS modules](https://nodejs.org/api/modules.html), [process.argv](https://nodejs.org/api/process.html#processargv), and [path.basename](https://nodejs.org/api/path.html#pathbasenamepath-suffix).
@@ -142,6 +143,7 @@ The files folder is based on `__dirname`, so running the script from a different
 ### N3 Source and Saved Files
 
 [index.js](set1/n3-file-manager/index.js) contains separate functions for create, read, update, delete, and list.
+The main program uses `if/else` to call the matching function, with short Tagalog comments explaining the flow.
 It uses synchronous file operations so each step completes before the next step runs.
 `list` uses `path.basename()` and `path.extname()` to display file details.
 
